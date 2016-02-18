@@ -6,10 +6,15 @@ const Randomly = {}
  * Creates a random string.
  * @param {number} length - The desired string length.
  * @return {string} The random string.
+ * @throws {TypeError} Argument length must be a number
+ * @throws {RangeError} Argument length must be greater than or equal to 0
  */
 Randomly.string = (length: number): string => {
-  if (!(length instanceof Number) && typeof length !== 'number' || length < 0) {
-    throw new Error('Length must be a number greater than or equal to 0')
+  if (!(length instanceof Number) && typeof length !== 'number') {
+    throw new TypeError('Length must be a number')
+  }
+  if (length < 0) {
+    throw new RangeError('Length must be greater than or equal to 0')
   }
   return (+new Date() * Math.random()).toString(36).substring(0, length)
 }
@@ -19,13 +24,15 @@ Randomly.string = (length: number): string => {
  * @param {number} min - The lower bound.
  * @param {number} max - The upper bound.
  * @return {number} The random number.
+ * @throws {TypeError} Argument min must be a number
+ * @throws {TypeError} Argument max must be a number
  */
 Randomly.int = (min: number, max: number): number => {
   if (!(min instanceof Number) && typeof min !== 'number') {
-    throw new Error('Min must be a number')
+    throw new TypeError('Min must be a number')
   }
   if (!(max instanceof Number) && typeof max !== 'number') {
-    throw new Error('Max must be a number')
+    throw new TypeError('Max must be a number')
   }
   return Math.floor(Math.random() * (max - min)) + min
 }
@@ -34,10 +41,15 @@ Randomly.int = (min: number, max: number): number => {
  * Calculates the smallest n-digit number.
  * @param {number} degree - The number of digits.
  * @return {number} The smallest n-digit number.
+ * @throws {TypeError} Argument degree must be a number
+ * @throws {RangeError} Argument degree must be greater than or equal to 0
  */
 Randomly.getLowerInt = (degree: number): number => {
-  if (!(degree instanceof Number) && typeof degree !== 'number' || degree <= 0) {
-    throw new Error('Degree must be a number greater than 0')
+  if (!(degree instanceof Number) && typeof degree !== 'number') {
+    throw new TypeError('Degree must be a number')
+  }
+  if (degree <= 0) {
+    throw new RangeError('Degree must be greater than 0')
   }
   if (degree === 1) return 0
   return Math.pow(10, degree - 1)
@@ -47,10 +59,15 @@ Randomly.getLowerInt = (degree: number): number => {
  * Calculates the largest n-digit number.
  * @param {number} degree - The number of digits.
  * @return {number} The largest n-digit number.
+ * @throws {TypeError} Argument degree must be a number
+ * @throws {RangeError} Argument degree must be greater than or equal to 0
  */
 Randomly.getUpperInt = (degree: number): number => {
-  if (!(degree instanceof Number) && typeof degree !== 'number' || degree <= 0) {
-    throw new Error('Degree must be a number greater than 0')
+  if (!(degree instanceof Number) && typeof degree !== 'number') {
+    throw new TypeError('Degree must be a number')
+  }
+  if (degree <= 0) {
+    throw new RangeError('Degree must be greater than 0')
   }
   return Math.pow(10, degree) - 1
 }
@@ -60,13 +77,17 @@ Randomly.getUpperInt = (degree: number): number => {
  * @param {Function} type - The type to create (e.g. String, Number or Object).
  * @param {number} length - The length (for strings and Objects) or boundary degree (for numbers).
  * @return {string|number|Object} The random string, number or object.
+ * @throws {TypeError} Argument length must be a number
+ * @throws {RangeError} Argument length must be greater than or equal to 0
  */
 Randomly.create = (type: mixed, length: number): string | number | Object => {
   if (typeof length === 'undefined') length = 5
-  if (!(length instanceof Number) && typeof length !== 'number' || length <= 0) {
-    throw new Error('Length must be a number greater than 0')
+  if (!(length instanceof Number) && typeof length !== 'number') {
+    throw new TypeError('Length must be a number')
   }
-
+  if (length <= 0) {
+    throw new RangeError('Length must be greater than 0')
+  }
   switch (type) {
     case String:
       return Randomly.string(length)
@@ -85,6 +106,10 @@ Randomly.create = (type: mixed, length: number): string | number | Object => {
  * @param {number} quantity - The quantity to create.
  * @param {number} length - The length (for strings and Objects) or boundary degree (for numbers).
  * @return {string[]|number[]|Object[]} The array of random strings, numbers or objects.
+ * @throws {TypeError} Argument quantity must be a number
+ * @throws {RangeError} Argument quantity must be greater than 0
+ * @throws {TypeError} Argument length must be a number
+ * @throws {RangeError} Argument length must be greater than or equal to 0
  */
 Randomly.collect = (type: Function, quantity: number, length: number): Array<string | number | Object> => {
   if (typeof type === 'undefined') type = Object
@@ -92,12 +117,17 @@ Randomly.collect = (type: Function, quantity: number, length: number): Array<str
   if (typeof length === 'undefined') length = 5
   const array: Array<string | number | Object> = []
 
-  if (!(quantity instanceof Number) && typeof quantity !== 'number' || quantity < 0) {
-    throw new Error('Quantity must be a number greater than or equal to 0')
+  if (!(quantity instanceof Number) && typeof quantity !== 'number') {
+    throw new TypeError('Quantity must be a number')
   }
-
-  if (!(length instanceof Number) && typeof length !== 'number' || length <= 0) {
-    throw new Error('Length must be a number greater than 0')
+  if (quantity < 0) {
+    throw new TypeError('Quantity must be greater than or equal to 0')
+  }
+  if (!(length instanceof Number) && typeof length !== 'number') {
+    throw new TypeError('Length must be a number')
+  }
+  if (length <= 0) {
+    throw new TypeError('Length must be greater than 0')
   }
 
   while (quantity > 0) {
