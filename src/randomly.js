@@ -1,6 +1,12 @@
 /* @flow */
+/** @module randomly */
 const Randomly = {}
 
+/**
+ * Creates a random string.
+ * @param {number} length - The desired string length.
+ * @return {string} The random string.
+ */
 Randomly.string = (length: number): string => {
   if (!(length instanceof Number) && typeof length !== 'number' || length < 0) {
     throw new Error('Length must be a number greater than or equal to 0')
@@ -8,6 +14,12 @@ Randomly.string = (length: number): string => {
   return (+new Date() * Math.random()).toString(36).substring(0, length)
 }
 
+/**
+ * Creates a random number within a range.
+ * @param {number} min - The lower bound.
+ * @param {number} max - The upper bound.
+ * @return {number} The random number.
+ */
 Randomly.int = (min: number, max: number): number => {
   if (!(min instanceof Number) && typeof min !== 'number') {
     throw new Error('Min must be a number')
@@ -18,6 +30,11 @@ Randomly.int = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
+/**
+ * Calculates the smallest n-digit number.
+ * @param {number} degree - The number of digits.
+ * @return {number} The smallest n-digit number.
+ */
 Randomly.getLowerInt = (degree: number): number => {
   if (!(degree instanceof Number) && typeof degree !== 'number' || degree <= 0) {
     throw new Error('Degree must be a number greater than 0')
@@ -26,6 +43,11 @@ Randomly.getLowerInt = (degree: number): number => {
   return Math.pow(10, degree - 1)
 }
 
+/**
+ * Calculates the largest n-digit number.
+ * @param {number} degree - The number of digits.
+ * @return {number} The largest n-digit number.
+ */
 Randomly.getUpperInt = (degree: number): number => {
   if (!(degree instanceof Number) && typeof degree !== 'number' || degree <= 0) {
     throw new Error('Degree must be a number greater than 0')
@@ -33,6 +55,12 @@ Randomly.getUpperInt = (degree: number): number => {
   return Math.pow(10, degree) - 1
 }
 
+/**
+ * Creates a random string, number or object.
+ * @param {Function} type - The type to create (e.g. String, Number or Object).
+ * @param {number} length - The length (for strings and Objects) or boundary degree (for numbers).
+ * @return {string|number|Object} The random string, number or object.
+ */
 Randomly.create = (type: mixed, length: number): string | number | Object => {
   if (typeof length === 'undefined') length = 5
   if (!(length instanceof Number) && typeof length !== 'number' || length <= 0) {
@@ -51,6 +79,13 @@ Randomly.create = (type: mixed, length: number): string | number | Object => {
   }
 }
 
+/**
+ * Creates an array of random strings, numbers or objects.
+ * @param {Function} type - The type to create (e.g. String, Number or Object).
+ * @param {number} quantity - The quantity to create.
+ * @param {number} length - The length (for strings and Objects) or boundary degree (for numbers).
+ * @return {string[]|number[]|Object[]} The array of random strings, numbers or objects.
+ */
 Randomly.collect = (type: Function, quantity: number, length: number): Array<string | number | Object> => {
   if (typeof type === 'undefined') type = Object
   if (typeof quantity === 'undefined') quantity = 5
@@ -73,6 +108,11 @@ Randomly.collect = (type: Function, quantity: number, length: number): Array<str
   return array
 }
 
+/**
+ * Sorts an array in random order.
+ * @param {Array} array - The array to sort.
+ * @return {Array} The sorted array.
+ */
 Randomly.sort = function <T: string | number | Object> (array: Array<T>): Array<T> {
   var len: number = array.length
   const newArray: typeof array = []
