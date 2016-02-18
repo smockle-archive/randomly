@@ -101,29 +101,37 @@ test('Randomly#int', (t) => {
     'returns a random positive number above max (inverted min & max)'
   )
 })
-//
-// test('Randomly#getLowerInt', (t) => {
-//   t.plan(5)
-//   it('exists', () => {
-//     assert.typeOf(Randomly.getLowerInt, 'function')
-//   })
-//
-//   it('throws an error if degree is NaN', () => {
-//     assert.throw(Randomly.getLowerInt.bind(this, 'degree'))
-//   })
-//
-//   it('throws an error if degree is equal to zero', () => {
-//     assert.throw(Randomly.getLowerInt.bind(this, 0))
-//   })
-//
-//   it('returns the smallest one-digit number', () => {
-//     assert.strictEqual(Randomly.getLowerInt(1), 0)
-//   })
-//
-//   it('returns the smallest n-digit number', () => {
-//     assert.strictEqual(Randomly.getLowerInt(5), 10000)
-//   })
-// })
+
+test('Randomly#getLowerInt', (t) => {
+  t.plan(5)
+
+  t.ok(
+    Randomly.getLowerInt instanceof Function,
+    'exists'
+  )
+
+  t.throws(
+    Randomly.getLowerInt.bind(this, 'degree'),
+    'throws an error if degree is NaN'
+  )
+
+  t.throws(
+    Randomly.getLowerInt.bind(this, 0),
+    'throws an error if degree is equal to zero'
+  )
+
+  t.equals(
+    Randomly.getLowerInt(1),
+    0,
+    'returns the smallest one-digit number'
+  )
+
+  t.equals(
+    Randomly.getLowerInt(5),
+    10000,
+    'returns the smallest n-digit number'
+  )
+})
 //
 // test('Randomly#getUpperInt', (t) => {
 //   t.plan(5)
