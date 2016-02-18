@@ -2,6 +2,10 @@
 
 Randomly generate and sort data.
 
+## Installation
+
+Run `npm install --save randomly` to add `randomly` to your project.
+
 ## API Reference
 
 * [randomly](#module_randomly)
@@ -126,3 +130,7 @@ Sorts an array in random order.
 | --- | --- | --- |
 | array | <code>Array</code> | The array to sort. |
 
+
+## Testing
+
+`randomly` includes several unit tests. After cloning the `randomly` repo locally, run `npm install` in the project folder to install dependencies. Run `npm run build` to update the built library, then `npm test` to execute the tests.
