@@ -132,29 +132,37 @@ test('Randomly#getLowerInt', (t) => {
     'returns the smallest n-digit number'
   )
 })
-//
-// test('Randomly#getUpperInt', (t) => {
-//   t.plan(5)
-//   it('exists', () => {
-//     assert.typeOf(Randomly.getUpperInt, 'function')
-//   })
-//
-//   it('throws an error if degree is NaN', () => {
-//     assert.throw(Randomly.getUpperInt.bind(this, 'degree'))
-//   })
-//
-//   it('throws an error if degree is equal to zero', () => {
-//     assert.throw(Randomly.getUpperInt.bind(this, 0))
-//   })
-//
-//   it('returns the largest one-digit number', () => {
-//     assert.strictEqual(Randomly.getUpperInt(1), 9)
-//   })
-//
-//   it('returns the largest n-digit number', () => {
-//     assert.strictEqual(Randomly.getUpperInt(5), 99999)
-//   })
-// })
+
+test('Randomly#getUpperInt', (t) => {
+  t.plan(5)
+
+  t.ok(
+    Randomly.getUpperInt instanceof Function,
+    'exists'
+  )
+
+  t.throws(
+    Randomly.getUpperInt.bind(this, 'degree'),
+    'throws an error if degree is NaN'
+  )
+
+  t.throws(
+    Randomly.getUpperInt.bind(this, 0),
+    'throws an error if degree is equal to zero'
+  )
+
+  t.equals(
+    Randomly.getUpperInt(1),
+    9,
+    'returns the largest one-digit number'
+  )
+
+  t.equals(
+    Randomly.getUpperInt(5),
+    99999,
+    'returns the largest n-digit number'
+  )
+})
 //
 // test('Randomly#create', (t) => {
 //   t.plan(8)
