@@ -51,7 +51,7 @@ Randomly.create = (type, length) => {
   }
 };
 
-Randomly.collection = (type, quantity, length) => {
+Randomly.collect = (type, quantity, length) => {
   if (typeof type === 'undefined') type = Object;
   if (typeof quantity === 'undefined') quantity = 5;
   if (typeof length === 'undefined') length = 5;

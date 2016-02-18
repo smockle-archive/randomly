@@ -51,7 +51,7 @@ Randomly.create = (type: mixed, length: number): string | number | Object => {
   }
 }
 
-Randomly.collection = (type: Function, quantity: number, length: number): Array<string | number | Object> => {
+Randomly.collect = (type: Function, quantity: number, length: number): Array<string | number | Object> => {
   if (typeof type === 'undefined') type = Object
   if (typeof quantity === 'undefined') quantity = 5
   if (typeof length === 'undefined') length = 5

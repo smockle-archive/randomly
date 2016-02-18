@@ -187,55 +187,55 @@ test('Randomly#collection', (t) => {
   t.plan(25)
 
   t.ok(
-    Randomly.collection instanceof Function,
+    Randomly.collect instanceof Function,
     'exists'
   )
   t.throws(
-    Randomly.collection.bind(this, Number, '0', 1),
+    Randomly.collect.bind(this, Number, '0', 1),
     'throws an error if quantity is NaN'
   )
   t.throws(
-    Randomly.collection.bind(this, Number, 1, '0'),
+    Randomly.collect.bind(this, Number, 1, '0'),
     'throws an error if length is NaN'
   )
   t.throws(
-    Randomly.collection.bind(this, Number, -1, 1),
+    Randomly.collect.bind(this, Number, -1, 1),
     'throws an error if quantity is less than zero'
   )
   t.throws(
-    Randomly.collection.bind(this, Number, 1, 0, true),
+    Randomly.collect.bind(this, Number, 1, 0, true),
     'throws an error if length is zero'
   )
   t.equal(
-    Randomly.collection(Number, 0, 1).length,
+    Randomly.collect(Number, 0, 1).length,
     0,
     'creates a zero-length array'
   )
   t.deepEqual(
-    Randomly.collection(Number, 0, 1),
+    Randomly.collect(Number, 0, 1),
     [],
     'creates an empty array'
   )
   t.equal(
-    Randomly.collection(String, 5).length,
+    Randomly.collect(String, 5).length,
     5,
     'creates an array of strings of length 5'
   )
-  Randomly.collection(String, 5).forEach((x) =>
+  Randomly.collect(String, 5).forEach((x) =>
     t.equal(typeof x, 'string', 'creates an array of strings'))
   t.equal(
-    Randomly.collection(Number, 5).length,
+    Randomly.collect(Number, 5).length,
     5,
     'creates an array of numbers of length 5'
   )
-  Randomly.collection(Number, 5).forEach((x) =>
+  Randomly.collect(Number, 5).forEach((x) =>
     t.equal(typeof x, 'number', 'creates an array of numbers'))
   t.equal(
-    Randomly.collection(Object, 5).length,
+    Randomly.collect(Object, 5).length,
     5,
     'creates an array of objects of length 5'
   )
-  Randomly.collection(Object, 5).forEach((x) =>
+  Randomly.collect(Object, 5).forEach((x) =>
     t.equal(typeof x, 'object', 'creates'))
 })
 
@@ -252,33 +252,33 @@ test('Randomly#sort', (t) => {
     'sorts an empty array'
   )
   t.equal(
-    Randomly.sort(Randomly.collection(Number, 100)).length,
+    Randomly.sort(Randomly.collect(Number, 100)).length,
     100,
     'sorts an array of numbers of length 100'
   )
-  const c1 = Randomly.collection(Number, 100)
+  const c1 = Randomly.collect(Number, 100)
   t.notDeepEqual(
     Randomly.sort(c1),
     c1,
     'sorts an array of numbers'
   )
   t.equal(
-    Randomly.sort(Randomly.collection(String, 100)).length,
+    Randomly.sort(Randomly.collect(String, 100)).length,
     100,
     'sorts an array of strings of length 100'
   )
-  const c2 = Randomly.collection(String, 100)
+  const c2 = Randomly.collect(String, 100)
   t.notDeepEqual(
     Randomly.sort(c2),
     c2,
     'sorts an array of strings'
   )
   t.equal(
-    Randomly.sort(Randomly.collection(Object, 100)).length,
+    Randomly.sort(Randomly.collect(Object, 100)).length,
     100,
     'sorts an array of objects of length 100'
   )
-  const c3 = Randomly.collection(Object, 100)
+  const c3 = Randomly.collect(Object, 100)
   t.notDeepEqual(
     Randomly.sort(c3),
     c3,
