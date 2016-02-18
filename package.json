@@ -1,0 +1,19 @@
+{
+  "name": "randomly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build": "babel src --out-dir dist",
+    "test": "tape tests/**/*.js"
+  },
+  "author": "Clay Miller <clay@smockle.com> (https://smockle.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.4.0"
+  }
+}
