@@ -16,17 +16,17 @@ test('Randomly#string', (t) => {
     Randomly.string.bind(this, -1),
     'throws an error if length is less than zero'
   )
-  t.equals(
+  t.equal(
     Randomly.string(0),
     '',
     'returns a zero-length string'
   )
-  t.equals(
+  t.equal(
     Randomly.string(5).length,
     5,
     'returns a string of length 5'
   )
-  t.equals(
+  t.equal(
     typeof Randomly.string(5),
     'string',
     'returns a string'
@@ -101,12 +101,12 @@ test('Randomly#getLowerInt', (t) => {
     Randomly.getLowerInt.bind(this, 0),
     'throws an error if degree is equal to zero'
   )
-  t.equals(
+  t.equal(
     Randomly.getLowerInt(1),
     0,
     'returns the smallest one-digit number'
   )
-  t.equals(
+  t.equal(
     Randomly.getLowerInt(5),
     10000,
     'returns the smallest n-digit number'
@@ -128,12 +128,12 @@ test('Randomly#getUpperInt', (t) => {
     Randomly.getUpperInt.bind(this, 0),
     'throws an error if degree is equal to zero'
   )
-  t.equals(
+  t.equal(
     Randomly.getUpperInt(1),
     9,
     'returns the largest one-digit number'
   )
-  t.equals(
+  t.equal(
     Randomly.getUpperInt(5),
     99999,
     'returns the largest n-digit number'
@@ -151,32 +151,32 @@ test('Randomly#create', (t) => {
     Randomly.create.bind(this, Number, '0'),
     'throws an error if length is NaN'
   )
-  t.equals(
+  t.equal(
     Randomly.create(String, 5).length,
     5,
     'creates a string of length 5'
   )
-  t.equals(
+  t.equal(
     typeof Randomly.create(String, 5),
     'string',
     'creates a string'
   )
-  t.equals(
+  t.equal(
     Randomly.create(Number, 5).toString().length,
     5,
     'creates a number of length 5'
   )
-  t.equals(
+  t.equal(
     typeof Randomly.create(Number, 5),
     'number',
     'creates a number'
   )
-  t.equals(
+  t.equal(
     Randomly.create(Object, 5).key.length,
     5,
     'creates an object of length 5'
   )
-  t.equals(
+  t.equal(
     typeof Randomly.create(Object, 5),
     'object',
     'creates an object'
@@ -206,67 +206,82 @@ test('Randomly#collection', (t) => {
     Randomly.collection.bind(this, Number, 1, 0, true),
     'throws an error if length is zero'
   )
-  t.equals(
+  t.equal(
     Randomly.collection(Number, 0, 1).length,
     0,
     'creates a zero-length array'
   )
-  t.deepEquals(
+  t.deepEqual(
     Randomly.collection(Number, 0, 1),
     [],
     'creates an empty array'
   )
-  t.equals(
+  t.equal(
     Randomly.collection(String, 5).length,
     5,
     'creates an array of strings of length 5'
   )
   Randomly.collection(String, 5).forEach((x) =>
-    t.equals(typeof x, 'string', 'creates an array of strings'))
-  t.equals(
+    t.equal(typeof x, 'string', 'creates an array of strings'))
+  t.equal(
     Randomly.collection(Number, 5).length,
     5,
     'creates an array of numbers of length 5'
   )
   Randomly.collection(Number, 5).forEach((x) =>
-    t.equals(typeof x, 'number', 'creates an array of numbers'))
-  t.equals(
+    t.equal(typeof x, 'number', 'creates an array of numbers'))
+  t.equal(
     Randomly.collection(Object, 5).length,
     5,
     'creates an array of objects of length 5'
   )
   Randomly.collection(Object, 5).forEach((x) =>
-    t.equals(typeof x, 'object', 'creates'))
+    t.equal(typeof x, 'object', 'creates'))
 })
-//
-// test('Randomly#sort', (t) => {
-//   t.plan(8)
-//   it('exists', () => {
-//     assert.typeOf(Randomly.sort, 'function')
-//   })
-//
-//   it('sorts an empty array', () => {
-//     assert.deepEqual(Randomly.sort([]), [])
-//   })
-//
-//   it('sorts an array of numbers', () => {
-//     let unsortedArray = Randomly.collection(Number, 100)
-//     let sortedArray = Randomly.sort(unsortedArray)
-//     assert.lengthOf(sortedArray, unsortedArray.length)
-//     assert.notDeepEqual(sortedArray, unsortedArray)
-//   })
-//
-//   it('sorts an array of strings', () => {
-//     let unsortedArray = Randomly.collection(String, 100)
-//     let sortedArray = Randomly.sort(unsortedArray)
-//     assert.lengthOf(sortedArray, unsortedArray.length)
-//     assert.notDeepEqual(sortedArray, unsortedArray)
-//   })
-//
-//   it('sorts an array of objects', () => {
-//     let unsortedArray = Randomly.collection(Object, 100)
-//     let sortedArray = Randomly.sort(unsortedArray)
-//     assert.lengthOf(sortedArray, unsortedArray.length)
-//     assert.notDeepEqual(sortedArray, unsortedArray)
-//   })
-// })
+
+test('Randomly#sort', (t) => {
+  t.plan(8)
+
+  t.ok(
+    Randomly.sort instanceof Function,
+    'exists'
+  )
+  t.deepEqual(
+    Randomly.sort([]),
+    [],
+    'sorts an empty array'
+  )
+  t.equal(
+    Randomly.sort(Randomly.collection(Number, 100)).length,
+    100,
+    'sorts an array of numbers of length 100'
+  )
+  const c1 = Randomly.collection(Number, 100)
+  t.notDeepEqual(
+    Randomly.sort(c1),
+    c1,
+    'sorts an array of numbers'
+  )
+  t.equal(
+    Randomly.sort(Randomly.collection(String, 100)).length,
+    100,
+    'sorts an array of strings of length 100'
+  )
+  const c2 = Randomly.collection(String, 100)
+  t.notDeepEqual(
+    Randomly.sort(c2),
+    c2,
+    'sorts an array of strings'
+  )
+  t.equal(
+    Randomly.sort(Randomly.collection(Object, 100)).length,
+    100,
+    'sorts an array of objects of length 100'
+  )
+  const c3 = Randomly.collection(Object, 100)
+  t.notDeepEqual(
+    Randomly.sort(c3),
+    c3,
+    'sorts an array of objects'
+  )
+})
