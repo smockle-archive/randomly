@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/smockle/randomly.svg?branch=master)](https://travis-ci.org/smockle/randomly)
+[![Code Climate](https://codeclimate.com/github/smockle/randomly/badges/gpa.svg)](https://codeclimate.com/github/smockle/randomly)
+[![Test Coverage](https://codeclimate.com/github/smockle/randomly/badges/coverage.svg)](https://codeclimate.com/github/smockle/randomly/coverage)
+[![Coverage Status](https://coveralls.io/repos/github/smockle/randomly/badge.svg?branch=master)](https://coveralls.io/github/smockle/randomly?branch=master)
+
 # Randomly
 
 Randomly generate and sort data.
