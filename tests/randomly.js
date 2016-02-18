@@ -163,35 +163,56 @@ test('Randomly#getUpperInt', (t) => {
     'returns the largest n-digit number'
   )
 })
-//
-// test('Randomly#create', (t) => {
-//   t.plan(8)
-//   it('exists', () => {
-//     assert.typeOf(Randomly.create, 'function')
-//   })
-//
-//   it('throws an error if length is NaN', () => {
-//     assert.throw(Randomly.create.bind(this, Number, '0'))
-//   })
-//
-//   it('creates a string', () => {
-//     let string = Randomly.create(String, 5)
-//     assert.lengthOf(string, 5)
-//     assert.typeOf(string, 'string')
-//   })
-//
-//   it('creates a number', () => {
-//     let number = Randomly.create(Number, 5)
-//     assert.lengthOf(number.toString(), 5)
-//     assert.typeOf(number, 'number')
-//   })
-//
-//   it('creates an object', () => {
-//     let object = Randomly.create(Object, 5)
-//     assert.lengthOf(object.key, 5)
-//     assert.typeOf(object, 'object')
-//   })
-// })
+
+test('Randomly#create', (t) => {
+  t.plan(8)
+
+  t.ok(
+    Randomly.create instanceof Function,
+    'exists'
+  )
+
+  t.throws(
+    Randomly.create.bind(this, Number, '0'),
+    'throws an error if length is NaN'
+  )
+
+  t.equals(
+    Randomly.create(String, 5).length,
+    5,
+    'creates a string of length 5'
+  )
+
+  t.equals(
+    typeof Randomly.create(String, 5),
+    'string',
+    'creates a string'
+  )
+
+  t.equals(
+    Randomly.create(Number, 5).toString().length,
+    5,
+    'creates a number of length 5'
+  )
+
+  t.equals(
+    typeof Randomly.create(Number, 5),
+    'number',
+    'creates a number'
+  )
+
+  t.equals(
+    Randomly.create(Object, 5).key.length,
+    5,
+    'creates an object of length 5'
+  )
+
+  t.equals(
+    typeof Randomly.create(Object, 5),
+    'object',
+    'creates an object'
+  )
+})
 //
 // test('Randomly#collection', (t) => {
 //   t.plan(13)
