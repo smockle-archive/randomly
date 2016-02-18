@@ -4,6 +4,7 @@ const Randomly = {}
 
 /**
  * Creates a random string.
+ * @alias module:randomly.string
  * @param {number} length - The desired string length.
  * @return {string} The random string.
  * @throws {TypeError} Argument length must be a number
@@ -21,6 +22,7 @@ Randomly.string = (length: number): string => {
 
 /**
  * Creates a random number within a range.
+ * @alias module:randomly.int
  * @param {number} min - The lower bound.
  * @param {number} max - The upper bound.
  * @return {number} The random number.
@@ -39,6 +41,7 @@ Randomly.int = (min: number, max: number): number => {
 
 /**
  * Calculates the smallest n-digit number.
+ * @alias module:randomly.getLowerInt
  * @param {number} degree - The number of digits.
  * @return {number} The smallest n-digit number.
  * @throws {TypeError} Argument degree must be a number
@@ -57,6 +60,7 @@ Randomly.getLowerInt = (degree: number): number => {
 
 /**
  * Calculates the largest n-digit number.
+ * @alias module:randomly.getUpperInt
  * @param {number} degree - The number of digits.
  * @return {number} The largest n-digit number.
  * @throws {TypeError} Argument degree must be a number
@@ -74,6 +78,7 @@ Randomly.getUpperInt = (degree: number): number => {
 
 /**
  * Creates a random string, number or object.
+ * @alias module:randomly.create
  * @param {Function} type - The type to create (e.g. String, Number or Object).
  * @param {number} length - The length (for strings and Objects) or boundary degree (for numbers).
  * @return {string|number|Object} The random string, number or object.
@@ -102,6 +107,7 @@ Randomly.create = (type: mixed, length: number): string | number | Object => {
 
 /**
  * Creates an array of random strings, numbers or objects.
+ * @alias module:randomly.collect
  * @param {Function} type - The type to create (e.g. String, Number or Object).
  * @param {number} quantity - The quantity to create.
  * @param {number} length - The length (for strings and Objects) or boundary degree (for numbers).
@@ -140,6 +146,7 @@ Randomly.collect = (type: Function, quantity: number, length: number): Array<str
 
 /**
  * Sorts an array in random order.
+ * @alias module:randomly.sort
  * @param {Array} array - The array to sort.
  * @return {Array} The sorted array.
  */
