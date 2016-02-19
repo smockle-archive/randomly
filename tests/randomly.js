@@ -146,7 +146,7 @@ test('Randomly#getUpperInt', (t) => {
 })
 
 test('Randomly#create', (t) => {
-  t.plan(8)
+  t.plan(9)
 
   t.ok(
     Randomly.create instanceof Function,
@@ -155,6 +155,10 @@ test('Randomly#create', (t) => {
   t.throws(
     Randomly.create.bind(this, Number, '0'),
     'throws an error if length is NaN'
+  )
+  t.throws(
+    Randomly.create.bind(this, String, -1),
+    'throws an error if length is less than zero'
   )
   t.equal(
     Randomly.create(String, 5).length,
