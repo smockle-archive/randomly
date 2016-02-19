@@ -1,3 +1,4 @@
+[![npm](https://img.shields.io/npm/v/randomly.svg)](https://www.npmjs.com/package/randomly)
 [![Build Status](https://travis-ci.org/smockle/randomly.svg?branch=master)](https://travis-ci.org/smockle/randomly)
 [![Build status](https://ci.appveyor.com/api/projects/status/x1sjhd5q1jv1eupd?svg=true)](https://ci.appveyor.com/project/smockle/randomly)
 [![Code Climate](https://codeclimate.com/github/smockle/randomly/badges/gpa.svg)](https://codeclimate.com/github/smockle/randomly)
