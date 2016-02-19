@@ -2,7 +2,7 @@ const Randomly = require('../dist/randomly')
 const test = require('tape')
 
 test('Randomly#string', (t) => {
-  t.plan(7)
+  t.plan(8)
 
   t.ok(
     Randomly.string instanceof Function,
@@ -25,6 +25,11 @@ test('Randomly#string', (t) => {
     Randomly.string(5).length,
     5,
     'returns a string of length 5'
+  )
+  t.equal(
+    Randomly.string(21).length,
+    21,
+    'returns a string of length 21'
   )
   t.equal(
     typeof Randomly.string(5),

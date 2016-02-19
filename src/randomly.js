@@ -17,7 +17,12 @@ Randomly.string = (length: number): string => {
   if (length < 0) {
     throw new RangeError('Length must be greater than or equal to 0')
   }
-  return (+new Date() * Math.random()).toString(36).substring(0, length)
+  const random = () => (+new Date() * Math.random()).toString(36)
+  var _string = random()
+  while (_string.length < length) {
+    _string = _string.concat(random())
+  }
+  return _string.substring(0, length)
 }
 
 /**
