@@ -1,27 +1,7 @@
 version: v1.5.0
-ignore: {}
-patch:
-  'npm:hawk:20160119':
-    - babel-cli > chokidar > fsevents > node-pre-gyp > request > hawk:
-        patched: '2016-06-23T07:39:28.232Z'
-  'npm:is-my-json-valid:20160118':
-    - babel-cli > chokidar > fsevents > node-pre-gyp > request > har-validator > is-my-json-valid:
-        patched: '2016-06-23T07:39:28.232Z'
-  'npm:request:20160119':
-    - babel-cli > chokidar > fsevents > node-pre-gyp > request:
-        patched: '2016-06-23T07:39:28.232Z'
+ignore:
   'npm:minimatch:20160620':
-    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > tar > fstream > rimraf > glob > minimatch:
-        patched: '2016-06-23T07:39:28.232Z'
-    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream > rimraf > glob > minimatch:
-        patched: '2016-06-23T07:39:28.232Z'
-    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > fstream > rimraf > glob > minimatch:
-        patched: '2016-06-23T07:39:28.232Z'
-    - babel-cli > chokidar > fsevents > node-pre-gyp > rimraf > glob > minimatch:
-        patched: '2016-06-23T07:39:28.232Z'
-    - babel-cli > chokidar > fsevents > node-pre-gyp > tar > fstream > rimraf > glob > minimatch:
-        patched: '2016-06-23T07:39:28.232Z'
-    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > rimraf > glob > minimatch:
-        patched: '2016-06-23T07:39:28.232Z'
-    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > minimatch:
-        patched: '2016-06-23T07:39:28.232Z'
+    - snyk > recursive-readdir > minimatch:
+        reason: No available upgrade or patch
+        expires: '2016-07-23T07:49:20.876Z'
+patch: {}
