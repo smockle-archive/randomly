@@ -9,9 +9,9 @@
   "scripts": {
     "start": "node index.js",
     "build": "babel src --out-dir dist",
-    "docs": "jsdoc2md dist/**/*.js --template jsdoc2md/README.hbs > README.md",
-    "test": "tape tests/**/*.js && snyk test",
-    "coverage": "istanbul cover tape tests/**/*.js",
+    "docs": "jsdoc2md \"dist/**/*.js\" --template jsdoc2md/README.hbs > README.md",
+    "test": "tape \"tests/**/*.js\" && snyk test",
+    "coverage": "istanbul cover tape \"tests/**/*.js\"",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
