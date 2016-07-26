@@ -41,7 +41,7 @@
   "snyk": true,
   "dependencies": {
     "babel-cli": "^6.5.1",
-    "babel-register": "^6.5.2",
+    "babel-register": "^6.11.6",
     "snyk": "^1.14.3"
   }
 }
