@@ -4,4 +4,26 @@ ignore:
     - snyk > recursive-readdir > minimatch:
         reason: No available upgrade or patch
         expires: '2016-07-23T07:49:20.876Z'
-patch: {}
+patch:
+  'npm:minimatch:20160620':
+    - babel-cli > chokidar > fsevents > node-pre-gyp > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+      snyk > recursive-readdir > minimatch:
+        patched: '2016-07-26T22:28:43.188Z'
+    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > rimraf > glob > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+    - babel-cli > chokidar > fsevents > node-pre-gyp > rimraf > glob > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+    - babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+    - snyk > recursive-readdir > minimatch:
+        patched: '2016-07-26T22:21:45.952Z'
+  'npm:tough-cookie:20160722':
+    - babel-cli > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2016-07-26T22:28:43.188Z'
