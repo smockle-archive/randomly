@@ -28,7 +28,7 @@
   "homepage": "https://github.com/smockle/randomly#readme",
   "devDependencies": {
     "codeclimate-test-reporter": "^0.3.1",
-    "coveralls": "^2.11.6",
+    "coveralls": "^2.11.10",
     "eslint": "^3.0.0",
     "eslint-config-standard": "^6.0.0",
     "eslint-plugin-promise": "^2.0.0",
