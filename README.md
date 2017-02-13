@@ -8,6 +8,8 @@
 
 # Randomly
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/smockle/randomly.svg)](https://greenkeeper.io/)
+
 Randomly generate and sort data.
 
 ## Installation
