@@ -5,6 +5,7 @@
 [![Test Coverage](https://codeclimate.com/github/smockle/randomly/badges/coverage.svg)](https://codeclimate.com/github/smockle/randomly/coverage)
 [![Coverage Status](https://coveralls.io/repos/github/smockle/randomly/badge.svg?branch=master)](https://coveralls.io/github/smockle/randomly?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/npm/randomly/badge.svg)](https://snyk.io/test/npm/randomly)
+[![Greenkeeper badge](https://badges.greenkeeper.io/smockle/randomly.svg)](https://greenkeeper.io/)
 
 # Randomly
 
@@ -26,6 +27,7 @@ Run `npm install --save randomly` to add `randomly` to your project.
     * [.sort(array)](#module_randomly.sort) ⇒ <code>Array</code>
 
 <a name="module_randomly.string"></a>
+
 ### randomly.string(length) ⇒ <code>string</code>
 Creates a random string.
 
@@ -42,6 +44,7 @@ Creates a random string.
 | length | <code>number</code> | The desired string length. |
 
 <a name="module_randomly.int"></a>
+
 ### randomly.int(min, max) ⇒ <code>number</code>
 Creates a random number within a range.
 
@@ -59,6 +62,7 @@ Creates a random number within a range.
 | max | <code>number</code> | The upper bound. |
 
 <a name="module_randomly.getLowerInt"></a>
+
 ### randomly.getLowerInt(degree) ⇒ <code>number</code>
 Calculates the smallest n-digit number.
 
@@ -75,6 +79,7 @@ Calculates the smallest n-digit number.
 | degree | <code>number</code> | The number of digits. |
 
 <a name="module_randomly.getUpperInt"></a>
+
 ### randomly.getUpperInt(degree) ⇒ <code>number</code>
 Calculates the largest n-digit number.
 
@@ -91,6 +96,7 @@ Calculates the largest n-digit number.
 | degree | <code>number</code> | The number of digits. |
 
 <a name="module_randomly.create"></a>
+
 ### randomly.create(type, length) ⇒ <code>string</code> &#124; <code>number</code> &#124; <code>Object</code>
 Creates a random string, number or object.
 
@@ -108,6 +114,7 @@ Creates a random string, number or object.
 | length | <code>number</code> | The length (for strings and Objects) or boundary degree (for numbers). |
 
 <a name="module_randomly.collect"></a>
+
 ### randomly.collect(type, quantity, length) ⇒ <code>Array.&lt;string&gt;</code> &#124; <code>Array.&lt;number&gt;</code> &#124; <code>Array.&lt;Object&gt;</code>
 Creates an array of random strings, numbers or objects.
 
@@ -128,6 +135,7 @@ Creates an array of random strings, numbers or objects.
 | length | <code>number</code> | The length (for strings and Objects) or boundary degree (for numbers). |
 
 <a name="module_randomly.sort"></a>
+
 ### randomly.sort(array) ⇒ <code>Array</code>
 Sorts an array in random order.
 
