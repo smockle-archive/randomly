@@ -102,11 +102,14 @@ Randomly.create = (type: mixed, length: number): string | number | Object => {
     case String:
       return Randomly.string(length)
     case Number:
-      return Randomly.int(Randomly.getLowerInt(length), Randomly.getUpperInt(length))
+      return Randomly.int(
+        Randomly.getLowerInt(length),
+        Randomly.getUpperInt(length)
+      )
     case Object:
-      /* falls through */
+    /* falls through */
     default:
-      return { 'key': Randomly.string(length) }
+      return {key: Randomly.string(length)}
   }
 }
 
@@ -122,7 +125,11 @@ Randomly.create = (type: mixed, length: number): string | number | Object => {
  * @throws {TypeError} Argument length must be a number
  * @throws {RangeError} Argument length must be greater than or equal to 0
  */
-Randomly.collect = (type: Function, quantity: number, length: number): Array<string | number | Object> => {
+Randomly.collect = (
+  type: Function,
+  quantity: number,
+  length: number
+): Array<string | number | Object> => {
   if (typeof type === 'undefined') type = Object
   if (typeof quantity === 'undefined') quantity = 5
   if (typeof length === 'undefined') length = 5
@@ -155,7 +162,9 @@ Randomly.collect = (type: Function, quantity: number, length: number): Array<str
  * @param {Array} array - The array to sort.
  * @return {Array} The sorted array.
  */
-Randomly.sort = function <T: string | number | Object> (array: Array<T>): Array<T> {
+Randomly.sort = function<T: string | number | Object> (
+  array: Array<T>
+): Array<T> {
   var len: number = array.length
   const newArray: typeof array = []
 

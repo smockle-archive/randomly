@@ -1,7 +1,7 @@
 {
-    "extends": "standard",
-    "plugins": [
-        "standard"
-    ],
-    "rules": {}
+  "extends": "standard",
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ]
 }

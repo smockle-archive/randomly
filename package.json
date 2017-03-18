@@ -16,7 +16,8 @@
     "coverage": "istanbul cover tape \"tests/**/*.js\"",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect",
-    "postpublish": "greenkeeper-postpublish"
+    "postpublish": "greenkeeper-postpublish",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -29,18 +30,31 @@
   },
   "homepage": "https://github.com/smockle/randomly#readme",
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
     "codeclimate-test-reporter": "^0.4.0",
     "coveralls": "^2.11.6",
-    "eslint": "^3.0.0",
-    "eslint-config-standard": "^6.0.0",
-    "eslint-plugin-promise": "^3.0.0",
-    "eslint-plugin-standard": "^2.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-flowtype": "^2.30.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
     "greenkeeper-postpublish": "^1.0.0",
+    "husky": "^0.13.2",
     "istanbul": "^0.4.2",
     "jsdoc-to-markdown": "^3.0.0",
+    "lint-staged": "^3.4.0",
+    "prettier-eslint-cli": "^3.1.2",
     "tape": "^4.4.0"
   },
   "snyk": true,
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/prettier-eslint --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "babel-cli": "^6.10.1",
     "babel-register": "^6.5.2",
