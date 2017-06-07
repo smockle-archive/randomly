@@ -1,4 +1,4 @@
-const Randomly = require('../dist/randomly')
+const Randomly = require('../lib/randomly')
 const test = require('tape')
 
 test('Randomly#string', t => {
@@ -67,11 +67,7 @@ test('Randomly#getLowerInt', t => {
     'throws an error if degree is equal to zero'
   )
   t.equal(Randomly.getLowerInt(1), 0, 'returns the smallest one-digit number')
-  t.equal(
-    Randomly.getLowerInt(5),
-    10000,
-    'returns the smallest n-digit number'
-  )
+  t.equal(Randomly.getLowerInt(5), 10000, 'returns the smallest n-digit number')
 })
 
 test('Randomly#getUpperInt', t => {
@@ -150,21 +146,24 @@ test('Randomly#collection', t => {
     'creates an array of strings of length 5'
   )
   Randomly.collect(String, 5).forEach(x =>
-    t.equal(typeof x, 'string', 'creates an array of strings'))
+    t.equal(typeof x, 'string', 'creates an array of strings')
+  )
   t.equal(
     Randomly.collect(Number, 5).length,
     5,
     'creates an array of numbers of length 5'
   )
   Randomly.collect(Number, 5).forEach(x =>
-    t.equal(typeof x, 'number', 'creates an array of numbers'))
+    t.equal(typeof x, 'number', 'creates an array of numbers')
+  )
   t.equal(
     Randomly.collect(Object, 5).length,
     5,
     'creates an array of objects of length 5'
   )
   Randomly.collect(Object, 5).forEach(x =>
-    t.equal(typeof x, 'object', 'creates'))
+    t.equal(typeof x, 'object', 'creates')
+  )
 })
 
 test('Randomly#sort', t => {
