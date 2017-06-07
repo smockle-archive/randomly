@@ -1,22 +1,18 @@
 {
   "name": "randomly",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Randomly generate and sort data.",
-  "main": "index.js",
+  "main": "lib/randomly.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "start": "node index.js",
-    "build": "babel src --out-dir dist",
-    "docs": "jsdoc2md \"dist/**/*.js\" --template jsdoc2md/README.hbs > README.md",
-    "test": "npm run test:bash",
-    "test:bash": "tape \"tests/**/*.js\" && snyk auth $SNYK_TOKEN && snyk test",
-    "test:cmd": "tape \"tests/**/*.js\" && snyk auth %SNYK_TOKEN% && snyk test",
-    "coverage": "istanbul cover tape \"tests/**/*.js\"",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect",
-    "postpublish": "greenkeeper-postpublish",
+    "docs": "jsdoc2md lib/randomly.js --template jsdoc2md/README.hbs > README.md",
+    "test": "node test/randomly.js | colortape",
+    "coverage": "nyc --reporter=lcov node test/randomly.js | colortape",
+    "postcoverage": "nyc report",
+    "codeclimate": "codeclimate-test-reporter < ./coverage/lcov.info",
+    "prepublish": "npm test",
     "precommit": "lint-staged"
   },
   "repository": {
@@ -30,34 +26,25 @@
   },
   "homepage": "https://github.com/smockle/randomly#readme",
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
     "codeclimate-test-reporter": "^0.5.0",
-    "coveralls": "^2.11.6",
+    "colortape": "^0.1.2",
     "eslint": "^3.18.0",
     "eslint-config-standard": "^10.0.0",
-    "eslint-plugin-flowtype": "^2.30.3",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.0",
     "greenkeeper-postpublish": "^1.0.0",
     "husky": "^0.13.2",
-    "istanbul": "^0.4.2",
     "jsdoc-to-markdown": "^3.0.0",
     "lint-staged": "^3.4.0",
-    "prettier-eslint-cli": "^4.0.4",
-    "tape": "^4.4.0"
+    "nyc": "^11.0.2",
+    "prettier-eslint-cli": "^4.0.4"
   },
-  "snyk": true,
   "lint-staged": {
     "*.js": [
       "./node_modules/.bin/prettier-eslint --write",
       "git add"
     ]
-  },
-  "dependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-register": "^6.5.2",
-    "snyk": "^1.31.0"
   }
 }

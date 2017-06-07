@@ -3,7 +3,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/x1sjhd5q1jv1eupd?svg=true)](https://ci.appveyor.com/project/smockle/randomly)
 [![Code Climate](https://codeclimate.com/github/smockle/randomly/badges/gpa.svg)](https://codeclimate.com/github/smockle/randomly)
 [![Test Coverage](https://codeclimate.com/github/smockle/randomly/badges/coverage.svg)](https://codeclimate.com/github/smockle/randomly/coverage)
-[![Coverage Status](https://coveralls.io/repos/github/smockle/randomly/badge.svg?branch=master)](https://coveralls.io/github/smockle/randomly?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/npm/randomly/badge.svg)](https://snyk.io/test/npm/randomly)
 [![Greenkeeper badge](https://badges.greenkeeper.io/smockle/randomly.svg)](https://greenkeeper.io/)
 
@@ -22,8 +21,8 @@ Run `npm install --save randomly` to add `randomly` to your project.
     * [.int(min, max)](#module_randomly.int) ⇒ <code>number</code>
     * [.getLowerInt(degree)](#module_randomly.getLowerInt) ⇒ <code>number</code>
     * [.getUpperInt(degree)](#module_randomly.getUpperInt) ⇒ <code>number</code>
-    * [.create(type, length)](#module_randomly.create) ⇒ <code>string</code> &#124; <code>number</code> &#124; <code>Object</code>
-    * [.collect(type, quantity, length)](#module_randomly.collect) ⇒ <code>Array.&lt;string&gt;</code> &#124; <code>Array.&lt;number&gt;</code> &#124; <code>Array.&lt;Object&gt;</code>
+    * [.create(type, length)](#module_randomly.create) ⇒ <code>string</code> \| <code>number</code> \| <code>Object</code>
+    * [.collect(type, quantity, length)](#module_randomly.collect) ⇒ <code>Array.&lt;string&gt;</code> \| <code>Array.&lt;number&gt;</code> \| <code>Array.&lt;Object&gt;</code>
     * [.sort(array)](#module_randomly.sort) ⇒ <code>Array</code>
 
 <a name="module_randomly.string"></a>
@@ -31,7 +30,7 @@ Run `npm install --save randomly` to add `randomly` to your project.
 ### randomly.string(length) ⇒ <code>string</code>
 Creates a random string.
 
-**Kind**: static method of <code>[randomly](#module_randomly)</code>  
+**Kind**: static method of [<code>randomly</code>](#module_randomly)  
 **Returns**: <code>string</code> - The random string.  
 **Throws**:
 
@@ -48,7 +47,7 @@ Creates a random string.
 ### randomly.int(min, max) ⇒ <code>number</code>
 Creates a random number within a range.
 
-**Kind**: static method of <code>[randomly](#module_randomly)</code>  
+**Kind**: static method of [<code>randomly</code>](#module_randomly)  
 **Returns**: <code>number</code> - The random number.  
 **Throws**:
 
@@ -66,7 +65,7 @@ Creates a random number within a range.
 ### randomly.getLowerInt(degree) ⇒ <code>number</code>
 Calculates the smallest n-digit number.
 
-**Kind**: static method of <code>[randomly](#module_randomly)</code>  
+**Kind**: static method of [<code>randomly</code>](#module_randomly)  
 **Returns**: <code>number</code> - The smallest n-digit number.  
 **Throws**:
 
@@ -83,7 +82,7 @@ Calculates the smallest n-digit number.
 ### randomly.getUpperInt(degree) ⇒ <code>number</code>
 Calculates the largest n-digit number.
 
-**Kind**: static method of <code>[randomly](#module_randomly)</code>  
+**Kind**: static method of [<code>randomly</code>](#module_randomly)  
 **Returns**: <code>number</code> - The largest n-digit number.  
 **Throws**:
 
@@ -97,11 +96,11 @@ Calculates the largest n-digit number.
 
 <a name="module_randomly.create"></a>
 
-### randomly.create(type, length) ⇒ <code>string</code> &#124; <code>number</code> &#124; <code>Object</code>
+### randomly.create(type, length) ⇒ <code>string</code> \| <code>number</code> \| <code>Object</code>
 Creates a random string, number or object.
 
-**Kind**: static method of <code>[randomly](#module_randomly)</code>  
-**Returns**: <code>string</code> &#124; <code>number</code> &#124; <code>Object</code> - The random string, number or object.  
+**Kind**: static method of [<code>randomly</code>](#module_randomly)  
+**Returns**: <code>string</code> \| <code>number</code> \| <code>Object</code> - The random string, number or object.  
 **Throws**:
 
 - <code>TypeError</code> Argument length must be a number
@@ -115,11 +114,11 @@ Creates a random string, number or object.
 
 <a name="module_randomly.collect"></a>
 
-### randomly.collect(type, quantity, length) ⇒ <code>Array.&lt;string&gt;</code> &#124; <code>Array.&lt;number&gt;</code> &#124; <code>Array.&lt;Object&gt;</code>
+### randomly.collect(type, quantity, length) ⇒ <code>Array.&lt;string&gt;</code> \| <code>Array.&lt;number&gt;</code> \| <code>Array.&lt;Object&gt;</code>
 Creates an array of random strings, numbers or objects.
 
-**Kind**: static method of <code>[randomly](#module_randomly)</code>  
-**Returns**: <code>Array.&lt;string&gt;</code> &#124; <code>Array.&lt;number&gt;</code> &#124; <code>Array.&lt;Object&gt;</code> - The array of random strings, numbers or objects.  
+**Kind**: static method of [<code>randomly</code>](#module_randomly)  
+**Returns**: <code>Array.&lt;string&gt;</code> \| <code>Array.&lt;number&gt;</code> \| <code>Array.&lt;Object&gt;</code> - The array of random strings, numbers or objects.  
 **Throws**:
 
 - <code>TypeError</code> Argument quantity must be a number
@@ -139,7 +138,7 @@ Creates an array of random strings, numbers or objects.
 ### randomly.sort(array) ⇒ <code>Array</code>
 Sorts an array in random order.
 
-**Kind**: static method of <code>[randomly](#module_randomly)</code>  
+**Kind**: static method of [<code>randomly</code>](#module_randomly)  
 **Returns**: <code>Array</code> - The sorted array.  
 
 | Param | Type | Description |
