@@ -10,6 +10,7 @@
     "docs": "jsdoc2md lib/randomly.js --template jsdoc2md/README.hbs > README.md",
     "test": "nyc node test/randomly.js | colortape",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "npm test",
     "precommit": "lint-staged"
   },
   "repository": {
