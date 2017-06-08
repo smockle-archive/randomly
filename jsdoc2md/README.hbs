@@ -3,7 +3,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/x1sjhd5q1jv1eupd?svg=true)](https://ci.appveyor.com/project/smockle/randomly)
 [![Code Climate](https://codeclimate.com/github/smockle/randomly/badges/gpa.svg)](https://codeclimate.com/github/smockle/randomly)
 [![Test Coverage](https://codeclimate.com/github/smockle/randomly/badges/coverage.svg)](https://codeclimate.com/github/smockle/randomly/coverage)
-[![Known Vulnerabilities](https://snyk.io/test/npm/randomly/badge.svg)](https://snyk.io/test/npm/randomly)
+[![Known Vulnerabilities](https://snyk.io/test/github/smockle/randomly/badge.svg)](https://snyk.io/test/github/smockle/randomly)
 [![Greenkeeper badge](https://badges.greenkeeper.io/smockle/randomly.svg)](https://greenkeeper.io/)
 
 # Randomly
