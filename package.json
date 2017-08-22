@@ -7,9 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "docs": "jsdoc2md lib/randomly.js --template jsdoc2md/README.hbs > README.md",
-    "test": "node test/randomly.js | colortape",
-    "coverage": "nyc --reporter=lcov node test/randomly.js | colortape",
+    "docs": "jsdoc2md lib/randomly.mjs --template jsdoc2md/README.hbs > README.md",
+    "test": "node -r @std/esm test/randomly.mjs | colortape",
+    "coverage": "nyc --require @std/esm --extension .mjs --reporter=lcov node test/randomly.mjs | colortape",
     "postcoverage": "nyc report",
     "prepublish": "npm test",
     "precommit": "lint-staged"
@@ -33,6 +33,7 @@
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.0",
+    "flow-bin": "^0.53.1",
     "greenkeeper-postpublish": "^1.0.0",
     "husky": "^0.14.0",
     "jsdoc-to-markdown": "^3.0.0",
@@ -45,5 +46,11 @@
       "./node_modules/.bin/prettier-eslint --write",
       "git add"
     ]
+  },
+  "@std/esm": {
+    "cjs": true
+  },
+  "dependencies": {
+    "@std/esm": "^0.5.1"
   }
 }

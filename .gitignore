@@ -1,5 +1,6 @@
 node_modules
 .nyc_output
+.esm-cache
 coverage
 *.log
 .DS_Store

@@ -1,5 +1,5 @@
-const Randomly = require('../lib/randomly')
-const test = require('tape')
+import Randomly from '../lib/randomly'
+import test from 'tape'
 
 test('Randomly#string', t => {
   t.plan(8)
