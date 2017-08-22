@@ -42,7 +42,7 @@
     "prettier-eslint-cli": "^4.0.4"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,mjs}": [
       "./node_modules/.bin/prettier-eslint --write",
       "git add"
     ]
