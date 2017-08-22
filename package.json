@@ -1,6 +1,6 @@
 {
   "name": "randomly",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Randomly generate and sort data.",
   "main": "lib/randomly.js",
   "directories": {
