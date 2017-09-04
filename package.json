@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "scripts": {
+    "debug": "node --nolazy --inspect-brk=5858 -r @std/esm test/randomly.mjs",
     "docs": "jsdoc2md lib/randomly.mjs --configure jsdoc.json --template jsdoc2md/README.hbs --example-lang JavaScript > README.md",
     "test": "node -r @std/esm test/randomly.mjs | colortape",
     "coverage": "nyc --require @std/esm --extension .mjs --reporter=lcov node test/randomly.mjs | colortape",
